@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCE | Elite & Luxury Car Sales</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">VELOCE<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#inventory">Showroom</a></li>
+                <li><a href="#features">Experience</a></li>
+                <li><a href="#contact">Inquire</a></li>
+            </ul>
+        </nav>
+        <a href="#inventory" class="cta-btn">View Inventory</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="sub-title">Uncompromising Luxury</span>
+            <h1>Drive The Extraordinary</h1>
+            <p>Explore our curated collection of world-class exotic, sports, and luxury vehicles tailored for the elite.</p>
+            <div class="hero-buttons">
+                <a href="#inventory" class="btn primary">Explore Stock</a>
+                <a href="#contact" class="btn secondary">Private Concierge</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory / Showroom Section -->
+    <section id="inventory" class="showroom">
+        <div class="section-title">
+            <span class="sub-title">Current Offerings</span>
+            <h2>Exclusive Inventory</h2>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Models</button>
+            <button class="filter-btn" data-filter="supercar">Supercars</button>
+            <button class="filter-btn" data-filter="luxury">Luxury Sedans</button>
+            <button class="filter-btn" data-filter="suv">Exotic SUVs</button>
+        </div>
+
+        <div class="car-grid">
+            <!-- Car Card 1 -->
+            <div class="car-card" data-category="supercar">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Ferrari F8">
+                    <span class="tag">Supercar</span>
+                </div>
+                <div class="car-details">
+                    <h3>2023 Ferrari F8 Tributo</h3>
+                    <p class="specs"><i class="fa-solid fa-gauge"></i> 1,200 mi &nbsp;|&nbsp; <i class="fa-solid fa-gas-pump"></i> Petrol &nbsp;|&nbsp; 710 HP</p>
+                    <div class="price-row">
+                        <span class="price">$328,000</span>
+                        <button class="details-btn" onclick="openModal('Ferrari F8 Tributo', '$328,000', '1,200 mi', '710 HP')">Inquire</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 2 -->
+            <div class="car-card" data-category="luxury">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Rolls Royce Ghost">
+                    <span class="tag">Luxury</span>
+                </div>
+                <div class="car-details">
+                    <h3>2024 Rolls-Royce Ghost</h3>
+                    <p class="specs"><i class="fa-solid fa-gauge"></i> 450 mi &nbsp;|&nbsp; <i class="fa-solid fa-gas-pump"></i> Petrol &nbsp;|&nbsp; 563 HP</p>
+                    <div class="price-row">
+                        <span class="price">$415,000</span>
+                        <button class="details-btn" onclick="openModal('Rolls-Royce Ghost', '$415,000', '450 mi', '563 HP')">Inquire</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 3 -->
+            <div class="car-card" data-category="suv">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Lamborghini Urus">
+                    <span class="tag">Exotic SUV</span>
+                </div>
+                <div class="car-details">
+                    <h3>2023 Lamborghini Urus Performante</h3>
+                    <p class="specs"><i class="fa-solid fa-gauge"></i> 3,100 mi &nbsp;|&nbsp; <i class="fa-solid fa-gas-pump"></i> Petrol &nbsp;|&nbsp; 657 HP</p>
+                    <div class="price-row">
+                        <span class="price">$289,000</span>
+                        <button class="details-btn" onclick="openModal('Lamborghini Urus', '$289,000', '3,100 mi', '657 HP')">Inquire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal Popup -->
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Vehicle Inquiry</h2>
+            <p id="modalCarTitle" class="modal-sub"></p>
+            <form id="contactForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea placeholder="Your Message / Request a Test Drive" rows="4"></textarea>
+                <button type="submit" class="btn primary full">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>VELOCE<span>.</span></h2>
+                <p>The pinnacle of luxury vehicle acquisition and bespoke automotive curation.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Contact Concierge</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 450 Rodeo Drive, Beverly Hills, CA</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (800) 555-VELOCE</p>
+                <p><i class="fa-solid fa-envelope"></i> concierge@velocecars.com</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 VELOCE Motors Inc. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCE | Elite & Luxury Car Sales</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">VELOCE<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#inventory">Showroom</a></li>
+                <li><a href="#features">Experience</a></li>
+                <li><a href="#contact">Inquire</a></li>
+            </ul>
+        </nav>
+        <a href="#inventory" class="cta-btn">View Inventory</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="sub-title">Uncompromising Luxury</span>
+            <h1>Drive The Extraordinary</h1>
+            <p>Explore our curated collection of world-class exotic, sports, and luxury vehicles tailored for the elite.</p>
+            <div class="hero-buttons">
+                <a href="#inventory" class="btn primary">Explore Stock</a>
+                <a href="#contact" class="btn secondary">Private Concierge</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory / Showroom Section -->
+    <section id="inventory" class="showroom">
+        <div class="section-title">
+            <span class="sub-title">Current Offerings</span>
+            <h2>Exclusive Inventory</h2>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Models</button>
+            <button class="filter-btn" data-filter="supercar">Supercars</button>
+            <button class="filter-btn" data-filter="luxury">Luxury Sedans</button>
+            <button class="filter-btn" data-filter="suv">Exotic SUVs</button>
+        </div>
+
+        <div class="car-grid">
+            <!-- Car Card 1 -->
+            <div class="car-card" data-category="supercar">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Ferrari F8">
+                    <span class="tag">Supercar</span>
+                </div>
+                <div class="car-details">
+                    <h3>2023 Ferrari F8 Tributo</h3>
+                    <p class="specs"><i class="fa-solid fa-gauge"></i> 1,200 mi &nbsp;|&nbsp; <i class="fa-solid fa-gas-pump"></i> Petrol &nbsp;|&nbsp; 710 HP</p>
+                    <div class="price-row">
+                        <span class="price">$328,000</span>
+                        <button class="details-btn" onclick="openModal('Ferrari F8 Tributo', '$328,000', '1,200 mi', '710 HP')">Inquire</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 2 -->
+            <div class="car-card" data-category="luxury">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Rolls Royce Ghost">
+                    <span class="tag">Luxury</span>
+                </div>
+                <div class="car-details">
+                    <h3>2024 Rolls-Royce Ghost</h3>
+                    <p class="specs"><i class="fa-solid fa-gauge"></i> 450 mi &nbsp;|&nbsp; <i class="fa-solid fa-gas-pump"></i> Petrol &nbsp;|&nbsp; 563 HP</p>
+                    <div class="price-row">
+                        <span class="price">$415,000</span>
+                        <button class="details-btn" onclick="openModal('Rolls-Royce Ghost', '$415,000', '450 mi', '563 HP')">Inquire</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 3 -->
+            <div class="car-card" data-category="suv">
+                <div class="car-image">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Lamborghini Urus">
+                    <span class="tag">Exotic SUV</span>
+                </div>
+                <div class="car-details">
+                    <h3>2023 Lamborghini Urus Performante</h3>
+                    <p class="specs"><i class="fa-solid fa-gauge"></i> 3,100 mi &nbsp;|&nbsp; <i class="fa-solid fa-gas-pump"></i> Petrol &nbsp;|&nbsp; 657 HP</p>
+                    <div class="price-row">
+                        <span class="price">$289,000</span>
+                        <button class="details-btn" onclick="openModal('Lamborghini Urus', '$289,000', '3,100 mi', '657 HP')">Inquire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal Popup -->
+    <div id="inquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Vehicle Inquiry</h2>
+            <p id="modalCarTitle" class="modal-sub"></p>
+            <form id="contactForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea placeholder="Your Message / Request a Test Drive" rows="4"></textarea>
+                <button type="submit" class="btn primary full">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>VELOCE<span>.</span></h2>
+                <p>The pinnacle of luxury vehicle acquisition and bespoke automotive curation.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Contact Concierge</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 450 Rodeo Drive, Beverly Hills, CA</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (800) 555-VELOCE</p>
+                <p><i class="fa-solid fa-envelope"></i> concierge@velocecars.com</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 VELOCE Motors Inc. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
