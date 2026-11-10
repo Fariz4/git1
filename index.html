@@ -4,120 +4,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URBAN FIT | Men's Fashion</title>
+<title>URBAN FIT | Premium Men's Fashion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --dark: #171714;
+    --dark2: #22221e;
+    --cream: #f4f0e8;
+    --white: #fffdf8;
+    --gold: #c5a46d;
+    --text: #33332e;
+    --muted: #88877e;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'DM Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: #f8f8f8;
-    color: #222;
+    background: var(--cream);
+    color: var(--text);
 }
 
-/* Navbar */
+/* NAVBAR */
 header {
-    background: #111;
+    background: var(--dark);
     color: white;
-    padding: 20px 7%;
+    padding: 22px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
 }
 
 nav a {
-    color: white;
+    color: #eee;
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 15px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: .3s;
 }
 
 nav a:hover {
-    color: #d4a373;
+    color: var(--gold);
 }
 
-/* Hero section */
+.cart {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* HERO */
 .hero {
-    min-height: 500px;
-    background: linear-gradient(
-        90deg,
-        rgba(0,0,0,.8),
-        rgba(0,0,0,.15)
-    ), url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600")
+    min-height: 570px;
+    background:
+    linear-gradient(90deg, rgba(15,15,13,.88), rgba(15,15,13,.2)),
+    url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600")
     center/cover;
     display: flex;
     align-items: center;
-    padding: 60px 8%;
+    padding: 70px 8%;
     color: white;
 }
 
 .hero-content {
-    max-width: 550px;
+    max-width: 600px;
+}
+
+.hero-tag {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: 55px;
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.1;
+    margin-bottom: 25px;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+    color: #ddd;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 35px;
 }
 
 .btn {
-    background: #d4a373;
-    color: #111;
-    padding: 14px 30px;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 15px 32px;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+    border: 1px solid var(--gold);
     display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    transition: .3s;
 }
 
-/* Categories */
+.btn:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+/* SECTIONS */
 .section {
-    padding: 60px 7%;
+    padding: 85px 7%;
 }
 
 .section-title {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 35px;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: var(--dark);
+    margin-bottom: 12px;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+/* CATEGORIES */
 .categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 22px;
 }
 
 .category {
-    height: 250px;
-    background: #ddd;
+    height: 330px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
     background-position: center;
     color: white;
-    font-size: 28px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px black;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    overflow: hidden;
+    text-shadow: 0 2px 8px #000;
+    transition: .4s;
 }
 
-/* Products */
+.category::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.3);
+    transition: .3s;
+}
+
+.category:hover::before {
+    background: rgba(0,0,0,.05);
+}
+
+.category span {
+    position: relative;
+    z-index: 1;
+}
+
+/* PRODUCTS */
+#products {
+    background: var(--white);
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -125,114 +211,185 @@ nav a:hover {
 }
 
 .product {
-    background: white;
-    padding-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 3px 12px #ddd;
-    transition: .3s;
+    background: var(--cream);
+    text-align: left;
+    padding-bottom: 22px;
+    transition: .35s;
+    overflow: hidden;
 }
 
 .product:hover {
-    transform: translateY(-7px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
 
 .product img {
     width: 100%;
-    height: 260px;
+    height: 290px;
     object-fit: cover;
+    transition: .5s;
+}
+
+.product:hover img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 15px 17px;
 }
 
 .product h3 {
-    margin: 15px 0 8px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--dark);
 }
 
 .price {
-    color: #b47b43;
+    color: #a37d43;
     font-size: 19px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-weight: 800;
+    margin-bottom: 16px;
 }
 
 .product button {
-    background: #111;
+    background: var(--dark);
     color: white;
-    padding: 11px 20px;
+    padding: 12px 20px;
     border: none;
+    width: 100%;
     cursor: pointer;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: .3s;
 }
 
 .product button:hover {
-    background: #d4a373;
-    color: #111;
+    background: var(--gold);
+    color: var(--dark);
 }
 
-/* Offer */
+/* OFFER */
 .offer {
-    background: #171717;
+    background:
+    linear-gradient(rgba(15,15,13,.85), rgba(15,15,13,.85)),
+    url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200")
+    center/cover;
     color: white;
     text-align: center;
-    padding: 65px 20px;
+    padding: 90px 20px;
 }
 
 .offer h2 {
-    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
     margin-bottom: 15px;
+    color: var(--gold);
 }
 
 .offer p {
-    margin-bottom: 25px;
+    color: #ddd;
+    margin-bottom: 30px;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-    background: #111;
+    background: var(--dark);
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 55px 20px;
 }
 
-.cart {
-    color: #d4a373;
-    font-weight: bold;
+footer h2 {
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
 }
 
-/* Responsive */
+footer h2 span {
+    color: var(--gold);
+}
+
+footer p {
+    color: #aaa;
+    margin: 12px 0;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
 @media(max-width: 900px) {
     .products {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category {
+        height: 250px;
     }
 }
 
 @media(max-width: 600px) {
     header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        gap: 13px;
         flex-wrap: wrap;
-        gap: 15px;
+        justify-content: center;
     }
 
     nav a {
-        margin: 0 8px;
-        font-size: 13px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 45px 7%;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 43px;
+    }
+
+    .section {
+        padding: 55px 5%;
+    }
+
+    .section-title {
+        font-size: 30px;
     }
 
     .categories {
         grid-template-columns: 1fr;
     }
 
+    .category {
+        height: 250px;
+    }
+
     .products {
-        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
     .product img {
-        height: 180px;
+        height: 190px;
     }
 
-    .section {
-        padding: 40px 4%;
+    .product-info {
+        padding: 12px;
+    }
+
+    .product h3 {
+        font-size: 13px;
+    }
+
+    .product button {
+        padding: 10px 5px;
+        font-size: 10px;
+    }
+
+    .offer h2 {
+        font-size: 36px;
     }
 }
 </style>
@@ -240,98 +397,103 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <header>
-    <div class="logo">URBAN FIT.</div>
+    <div class="logo">URBAN FIT<span>.</span></div>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#products">Shop</a>
-        <a href="#contact">Contact</a>
+        <a href="#">HOME</a>
+        <a href="#categories">CATEGORIES</a>
+        <a href="#products">SHOP</a>
+        <a href="#contact">CONTACT</a>
         <span class="cart">🛒 <span id="cartCount">0</span></span>
     </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
+        <div class="hero-tag">THE NEW COLLECTION · 2026</div>
         <h1>STYLE THAT DEFINES YOU.</h1>
-        <p>Discover the latest men's fashion.
-        Look confident. Feel different.</p>
-        <a href="#products" class="btn">SHOP NOW</a>
+        <p>Discover premium men's fashion.
+        Elevate your everyday look with timeless style and modern confidence.</p>
+        <a href="#products" class="btn">EXPLORE COLLECTION</a>
     </div>
 </section>
 
-<!-- CATEGORIES -->
 <section class="section" id="categories">
-    <h2 class="section-title">SHOP BY CATEGORY</h2>
+    <h2 class="section-title">OUR COLLECTIONS</h2>
+    <p class="section-subtitle">FIND YOUR SIGNATURE STYLE</p>
 
     <div class="categories">
         <div class="category"
         style="background-image:url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700')">
-            T-SHIRTS
+            <span>T-SHIRTS</span>
         </div>
 
         <div class="category"
         style="background-image:url('https://images.unsplash.com/photo-1603252109303-2751441dd157?w=700')">
-            SHIRTS
+            <span>SHIRTS</span>
         </div>
 
         <div class="category"
         style="background-image:url('https://images.unsplash.com/photo-1542272604-787c3835535d?w=700')">
-            JEANS
+            <span>DENIM</span>
         </div>
     </div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="section" id="products">
     <h2 class="section-title">TRENDING COLLECTION</h2>
+    <p class="section-subtitle">DESIGNED FOR THE MODERN MAN</p>
 
     <div class="products">
 
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600">
-            <h3>Classic White T-Shirt</h3>
-            <p class="price">₹599</p>
-            <button onclick="addToCart()">ADD TO CART</button>
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="White T-shirt">
+            <div class="product-info">
+                <h3>Classic White T-Shirt</h3>
+                <p class="price">₹599</p>
+                <button onclick="addToCart()">ADD TO CART</button>
+            </div>
         </div>
 
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600">
-            <h3>Premium Casual Shirt</h3>
-            <p class="price">₹999</p>
-            <button onclick="addToCart()">ADD TO CART</button>
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600" alt="Casual Shirt">
+            <div class="product-info">
+                <h3>Premium Casual Shirt</h3>
+                <p class="price">₹999</p>
+                <button onclick="addToCart()">ADD TO CART</button>
+            </div>
         </div>
 
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600">
-            <h3>Classic Blue Jeans</h3>
-            <p class="price">₹1,299</p>
-            <button onclick="addToCart()">ADD TO CART</button>
+            <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600" alt="Blue Jeans">
+            <div class="product-info">
+                <h3>Classic Blue Jeans</h3>
+                <p class="price">₹1,299</p>
+                <button onclick="addToCart()">ADD TO CART</button>
+            </div>
         </div>
 
         <div class="product">
-            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600">
-            <h3>Stylish Jacket</h3>
-            <p class="price">₹1,799</p>
-            <button onclick="addToCart()">ADD TO CART</button>
+            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600" alt="Jacket">
+            <div class="product-info">
+                <h3>Stylish Jacket</h3>
+                <p class="price">₹1,799</p>
+                <button onclick="addToCart()">ADD TO CART</button>
+            </div>
         </div>
 
     </div>
 </section>
 
-<!-- OFFER -->
 <section class="offer">
     <h2>UP TO 40% OFF</h2>
-    <p>Upgrade your wardrobe with our latest collection.</p>
-    <a href="#products" class="btn">EXPLORE COLLECTION</a>
+    <p>Upgrade your wardrobe. Discover your next favourite look.</p>
+    <a href="#products" class="btn">SHOP THE SALE</a>
 </section>
 
-<!-- FOOTER -->
 <footer id="contact">
-    <h2>URBAN FIT.</h2>
+    <h2>URBAN FIT<span>.</span></h2>
     <p>Fashion is not just clothing. It's your identity.</p>
     <p>Contact: support@urbanfit.com</p>
     <p>© 2026 URBAN FIT. All Rights Reserved.</p>
