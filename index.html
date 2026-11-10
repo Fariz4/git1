@@ -10,13 +10,14 @@
 
 <style>
 :root {
-    --dark: #171714;
-    --dark2: #22221e;
-    --cream: #f4f0e8;
-    --white: #fffdf8;
-    --gold: #c5a46d;
-    --text: #33332e;
-    --muted: #88877e;
+    --dark: #080B12;
+    --dark2: #121827;
+    --cream: #101522;
+    --white: #171F30;
+    --blue: #176BFF;
+    --blue-light: #42A5FF;
+    --text: #F5F7FF;
+    --muted: #9AA8C0;
 }
 
 * {
@@ -36,6 +37,7 @@ body {
 }
 
 /* NAVBAR */
+
 header {
     background: var(--dark);
     color: white;
@@ -46,6 +48,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid #202B42;
 }
 
 .logo {
@@ -55,7 +58,7 @@ header {
 }
 
 .logo span {
-    color: var(--gold);
+    color: var(--blue);
 }
 
 nav {
@@ -73,19 +76,20 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--gold);
+    color: var(--blue-light);
 }
 
 .cart {
-    color: var(--gold);
+    color: var(--blue-light);
     font-weight: bold;
 }
 
 /* HERO */
+
 .hero {
     min-height: 570px;
     background:
-    linear-gradient(90deg, rgba(15,15,13,.88), rgba(15,15,13,.2)),
+    linear-gradient(90deg, rgba(5,10,22,.95), rgba(5,10,22,.35)),
     url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600")
     center/cover;
     display: flex;
@@ -99,7 +103,7 @@ nav a:hover {
 }
 
 .hero-tag {
-    color: var(--gold);
+    color: var(--blue-light);
     letter-spacing: 4px;
     font-size: 12px;
     margin-bottom: 25px;
@@ -113,18 +117,18 @@ nav a:hover {
 }
 
 .hero p {
-    color: #ddd;
+    color: #C5D0E3;
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: 35px;
 }
 
 .btn {
-    background: var(--gold);
-    color: var(--dark);
+    background: var(--blue);
+    color: white;
     padding: 15px 32px;
     text-decoration: none;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--blue);
     display: inline-block;
     font-size: 12px;
     letter-spacing: 2px;
@@ -134,10 +138,11 @@ nav a:hover {
 
 .btn:hover {
     background: transparent;
-    color: var(--gold);
+    color: var(--blue-light);
 }
 
 /* SECTIONS */
+
 .section {
     padding: 85px 7%;
 }
@@ -146,7 +151,7 @@ nav a:hover {
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 38px;
-    color: var(--dark);
+    color: var(--text);
     margin-bottom: 12px;
 }
 
@@ -159,6 +164,7 @@ nav a:hover {
 }
 
 /* CATEGORIES */
+
 .categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -186,12 +192,12 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.3);
+    background: rgba(5,15,35,.45);
     transition: .3s;
 }
 
 .category:hover::before {
-    background: rgba(0,0,0,.05);
+    background: rgba(23,107,255,.15);
 }
 
 .category span {
@@ -200,8 +206,9 @@ nav a:hover {
 }
 
 /* PRODUCTS */
+
 #products {
-    background: var(--white);
+    background: #0B101C;
 }
 
 .products {
@@ -211,16 +218,18 @@ nav a:hover {
 }
 
 .product {
-    background: var(--cream);
+    background: var(--white);
     text-align: left;
     padding-bottom: 22px;
     transition: .35s;
     overflow: hidden;
+    border: 1px solid #26344D;
 }
 
 .product:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    box-shadow: 0 12px 30px rgba(23,107,255,.18);
+    border-color: var(--blue);
 }
 
 .product img {
@@ -241,18 +250,18 @@ nav a:hover {
 .product h3 {
     font-size: 15px;
     margin-bottom: 10px;
-    color: var(--dark);
+    color: var(--text);
 }
 
 .price {
-    color: #a37d43;
+    color: var(--blue-light);
     font-size: 19px;
     font-weight: 800;
     margin-bottom: 16px;
 }
 
 .product button {
-    background: var(--dark);
+    background: var(--blue);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -264,14 +273,15 @@ nav a:hover {
 }
 
 .product button:hover {
-    background: var(--gold);
+    background: var(--blue-light);
     color: var(--dark);
 }
 
 /* OFFER */
+
 .offer {
     background:
-    linear-gradient(rgba(15,15,13,.85), rgba(15,15,13,.85)),
+    linear-gradient(rgba(5,10,22,.9), rgba(5,10,22,.9)),
     url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200")
     center/cover;
     color: white;
@@ -283,20 +293,22 @@ nav a:hover {
     font-family: 'Playfair Display', serif;
     font-size: 48px;
     margin-bottom: 15px;
-    color: var(--gold);
+    color: var(--blue-light);
 }
 
 .offer p {
-    color: #ddd;
+    color: #C5D0E3;
     margin-bottom: 30px;
 }
 
 /* FOOTER */
+
 footer {
     background: var(--dark);
     color: white;
     text-align: center;
     padding: 55px 20px;
+    border-top: 1px solid #202B42;
 }
 
 footer h2 {
@@ -306,16 +318,17 @@ footer h2 {
 }
 
 footer h2 span {
-    color: var(--gold);
+    color: var(--blue);
 }
 
 footer p {
-    color: #aaa;
+    color: #9AA8C0;
     margin: 12px 0;
     font-size: 13px;
 }
 
 /* RESPONSIVE */
+
 @media(max-width: 900px) {
     .products {
         grid-template-columns: repeat(2, 1fr);
@@ -397,6 +410,8 @@ footer p {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
     <div class="logo">URBAN FIT<span>.</span></div>
 
@@ -409,21 +424,38 @@ footer p {
     </nav>
 </header>
 
+<!-- HERO SECTION -->
+
 <section class="hero">
     <div class="hero-content">
         <div class="hero-tag">THE NEW COLLECTION · 2026</div>
+
         <h1>STYLE THAT DEFINES YOU.</h1>
-        <p>Discover premium men's fashion.
-        Elevate your everyday look with timeless style and modern confidence.</p>
-        <a href="#products" class="btn">EXPLORE COLLECTION</a>
+
+        <p>
+            Discover premium men's fashion.
+            Elevate your everyday look with timeless
+            style and modern confidence.
+        </p>
+
+        <a href="#products" class="btn">
+            EXPLORE COLLECTION
+        </a>
     </div>
 </section>
 
+<!-- CATEGORIES -->
+
 <section class="section" id="categories">
+
     <h2 class="section-title">OUR COLLECTIONS</h2>
-    <p class="section-subtitle">FIND YOUR SIGNATURE STYLE</p>
+
+    <p class="section-subtitle">
+        FIND YOUR SIGNATURE STYLE
+    </p>
 
     <div class="categories">
+
         <div class="category"
         style="background-image:url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700')">
             <span>T-SHIRTS</span>
@@ -438,75 +470,145 @@ footer p {
         style="background-image:url('https://images.unsplash.com/photo-1542272604-787c3835535d?w=700')">
             <span>DENIM</span>
         </div>
+
     </div>
 </section>
 
+<!-- PRODUCTS -->
+
 <section class="section" id="products">
+
     <h2 class="section-title">TRENDING COLLECTION</h2>
-    <p class="section-subtitle">DESIGNED FOR THE MODERN MAN</p>
+
+    <p class="section-subtitle">
+        DESIGNED FOR THE MODERN MAN
+    </p>
 
     <div class="products">
 
         <div class="product">
+
             <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="White T-shirt">
+
             <div class="product-info">
+
                 <h3>Classic White T-Shirt</h3>
+
                 <p class="price">₹599</p>
-                <button onclick="addToCart()">ADD TO CART</button>
+
+                <button onclick="addToCart()">
+                    ADD TO CART
+                </button>
+
             </div>
         </div>
 
         <div class="product">
+
             <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600" alt="Casual Shirt">
+
             <div class="product-info">
+
                 <h3>Premium Casual Shirt</h3>
+
                 <p class="price">₹999</p>
-                <button onclick="addToCart()">ADD TO CART</button>
+
+                <button onclick="addToCart()">
+                    ADD TO CART
+                </button>
+
             </div>
         </div>
 
         <div class="product">
+
             <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600" alt="Blue Jeans">
+
             <div class="product-info">
+
                 <h3>Classic Blue Jeans</h3>
+
                 <p class="price">₹1,299</p>
-                <button onclick="addToCart()">ADD TO CART</button>
+
+                <button onclick="addToCart()">
+                    ADD TO CART
+                </button>
+
             </div>
         </div>
 
         <div class="product">
+
             <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600" alt="Jacket">
+
             <div class="product-info">
+
                 <h3>Stylish Jacket</h3>
+
                 <p class="price">₹1,799</p>
-                <button onclick="addToCart()">ADD TO CART</button>
+
+                <button onclick="addToCart()">
+                    ADD TO CART
+                </button>
+
             </div>
         </div>
 
     </div>
 </section>
 
+<!-- OFFER -->
+
 <section class="offer">
+
     <h2>UP TO 40% OFF</h2>
-    <p>Upgrade your wardrobe. Discover your next favourite look.</p>
-    <a href="#products" class="btn">SHOP THE SALE</a>
+
+    <p>
+        Upgrade your wardrobe.
+        Discover your next favourite look.
+    </p>
+
+    <a href="#products" class="btn">
+        SHOP THE SALE
+    </a>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer id="contact">
+
     <h2>URBAN FIT<span>.</span></h2>
-    <p>Fashion is not just clothing. It's your identity.</p>
+
+    <p>
+        Fashion is not just clothing.
+        It's your identity.
+    </p>
+
     <p>Contact: support@urbanfit.com</p>
-    <p>© 2026 URBAN FIT. All Rights Reserved.</p>
+
+    <p>
+        © 2026 URBAN FIT. All Rights Reserved.
+    </p>
+
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
+
 let cartCount = 0;
 
 function addToCart() {
+
     cartCount++;
+
     document.getElementById("cartCount").innerText = cartCount;
+
     alert("Product added to your cart!");
+
 }
+
 </script>
 
 </body>
